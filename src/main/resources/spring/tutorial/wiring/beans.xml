@@ -1,8 +1,23 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	   xmlns:aop="http://www.springframework.org/schema/aop"
-	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+	   					   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
  
-		<bean id="knight" class="leakfromjavaheap.blogspot.com.wiring.Knight" />
+		<bean id="knight" class="spring.tutorial.wiring.Knight" init-method="prepareForFight" destroy-method="fallAsleep">
+			<constructor-arg value="Brave Heart" />
+			<property name="weapon" value="Sword" />
+		</bean>
+		
+		<bean id="beast" class="spring.tutorial.wiring.Beast" abstract="true">
+			<property name="name" value="Beast" />
+		</bean>
+		
+		<bean id="dragon" class="spring.tutorial.wiring.Dragon" parent="beast">
+		
+		</bean>
 
+		<bean id="wolf" class="spring.tutorial.wiring.Wolf">
+		
+		</bean>
 </beans>

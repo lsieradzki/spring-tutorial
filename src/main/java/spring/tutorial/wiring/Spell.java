@@ -1,4 +1,4 @@
-package leakfromjavaheap.blogspot.com.wiring;
+package spring.tutorial.wiring;
 
 public class Spell {
 	

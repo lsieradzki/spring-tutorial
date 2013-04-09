@@ -1,5 +1,7 @@
 package spring.tutorial.wiring;
 
+import java.util.Properties;
+
 import org.apache.log4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -16,6 +18,7 @@ public class Spell {
 		log.info(ctx.getBean("wolf", Wolf.class).getName());
 		log.info(ctx.getBean("propertyHolder", PropertyHolder.class).getProperty() + " " + ctx.getBean("propertyHolder", PropertyHolder.class).getValue());
 		log.info(ctx.getBean("propertyHolder", PropertyHolder.class).getRandomValue());
+		log.info(ctx.getBean("myProperties", Properties.class).getProperty("name"));
 		ctx.close();
 	}
 

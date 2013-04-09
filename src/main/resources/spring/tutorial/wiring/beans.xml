@@ -8,7 +8,7 @@
 	   					   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
  
 		<bean id="knight" class="spring.tutorial.wiring.Knight" init-method="initMethod" destroy-method="destroyMethod" p:country = "England">
-			<constructor-arg value="Brave Heart" />
+			<constructor-arg value="#{myProperties['name']}" />
 			<property name="weapon" value="Sword" />
 			<property name="beasts">
 				<map>
@@ -17,7 +17,7 @@
 				</map>
 			</property>
 		</bean>
-		
+	
 		<bean id="beast" class="spring.tutorial.wiring.Beast" abstract="true">
 			<property name="name" value="Beast" />
 		</bean>
@@ -48,6 +48,6 @@
 		<bean id="country2" class="spring.tutorial.wiring.Country" p:size="100" />
 		<bean id="country3" class="spring.tutorial.wiring.Country" p:size="1000" />
 		
-				
+		<util:properties id="myProperties" location="spring/tutorial/wiring/myProperties.properties" />
 				
 </beans>

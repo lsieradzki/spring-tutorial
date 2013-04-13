@@ -12,7 +12,7 @@
  		<context:annotation-config  />
  		
  		<context:component-scan base-package="spring.tutorial.autowiring.autodiscover">
- 			<context:exclude-filter type="regex" expression="sprin.tutorial.autowiring.autodiscover.Auto*"/>
+<!--  			<context:exclude-filter type="regex" expression="sprin.tutorial.autowiring.autodiscover.Auto*"/> -->
  		</context:component-scan>
  		
 		<bean id="parent" class="spring.tutorial.autowiring.Parent" p:name="Tom">

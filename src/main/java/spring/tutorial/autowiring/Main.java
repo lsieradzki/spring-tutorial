@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import spring.tutorial.autowiring.autodiscover.Auto1;
+import spring.tutorial.autowiring.autodiscover.Engine1;
 
 public class Main {
 	private static final Logger log = Logger.getLogger(Main.class);
@@ -17,6 +18,7 @@ public class Main {
 		log.info(ctx.getBean("child", Child.class).getMother());
 		log.info(ctx.getBean("child", Child.class).getName());
 		log.info(ctx.getBean("auto1", Auto1.class).getAuto());
+		log.info(ctx.getBean("engine1", Engine1.class));
 	}
 
 }

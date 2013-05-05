@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+	<persistence-unit name="simple-unit">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+		<class>spring.tutorial.db.Client</class>
+		
+		<properties>
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+			<property name="hibernate.current_session_context_class" value="thread" />
+<!-- 			org.springframework.orm.hibernate4.SpringSessionContext -->
+		</properties>
+	</persistence-unit>
+</persistence>
